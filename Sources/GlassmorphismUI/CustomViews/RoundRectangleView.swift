@@ -34,14 +34,10 @@ struct RoundRectangleView: View {
 @available(iOS 15.0, *)
 struct RoundRectangleView_Preview: PreviewProvider {
     static var previews: some View {
-        let gradient = GradientBackground(
-            startColor: .g_Orange,
-            endColor: .g_Purple
-        )
-        
         ZStack {
             RoundedTopBar(
-                backgroundView: AnyView(gradient),
+                startColor: .g_Orange,
+                endColor: .g_Purple,
                 heightRatio: 0.3,
                 text: "第3問 / 10問"
             )

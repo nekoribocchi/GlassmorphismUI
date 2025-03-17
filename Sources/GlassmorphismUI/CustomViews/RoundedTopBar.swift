@@ -3,12 +3,14 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct RoundedTopBar: View {
-    var backgroundView: AnyView
+    var startColor : Color
+    var endColor : Color
     var heightRatio: CGFloat
     var text: String?
     
-    public init(backgroundView: AnyView, heightRatio: CGFloat = 0.3, text: String? = nil) {
-        self.backgroundView = backgroundView
+    public init(startColor: Color = .g_Orange ,  endColor: Color = .g_Purple, heightRatio: CGFloat = 0.3, text: String? = nil) {
+        self.startColor = startColor
+        self.endColor = endColor
         self.heightRatio = heightRatio
         self.text = text
     }
@@ -17,7 +19,10 @@ public struct RoundedTopBar: View {
         GeometryReader { geometry in
             VStack {
                 ZStack {
-                    backgroundView
+                    GradientBackground(
+                        startColor: .g_Orange,
+                        endColor: .g_Purple
+                    )
                         .frame(height: geometry.size.height * heightRatio)
                         .clipShape(PartialRoundedRectangle(radius: 60, corners: [.bottomLeft, .bottomRight]))
                     
@@ -46,12 +51,8 @@ struct PartialRoundedRectangle: Shape {
 @available(iOS 14.0, *)
 struct RoundedTopBar_Previews: PreviewProvider {
     static var previews: some View {
-        let gradient = GradientBackground(
-            startColor: .g_Orange,
-            endColor: .g_Purple
-        )
+   
         RoundedTopBar(
-            backgroundView: AnyView(gradient),
             heightRatio: 0.3,
             text: "第3問 / 10問"
         )
