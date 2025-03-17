@@ -1,4 +1,9 @@
-
+//
+//  File.swift
+//  GlassmorphismUI
+//
+//  Created by nekoribocchi on 2025/03/17.
+//
 import SwiftUI
 import Foundation
 

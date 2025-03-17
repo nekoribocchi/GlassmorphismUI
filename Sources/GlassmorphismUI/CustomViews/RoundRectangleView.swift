@@ -1,3 +1,9 @@
+//
+//  File.swift
+//  GlassmorphismUI
+//
+//  Created by nekoribocchi on 2025/03/17.
+//
 
 import SwiftUICore
 import SwiftUI
@@ -35,12 +41,12 @@ struct RoundRectangleView: View {
 struct RoundRectangleView_Preview: PreviewProvider {
     static var previews: some View {
         ZStack {
-            RoundedTopBar(
-                startColor: .g_Orange,
-                endColor: .g_Purple,
-                heightRatio: 0.3,
-                text: "第3問 / 10問"
-            )
+//            RoundedTopBar(
+//                startColor: .g_Orange,
+//                endColor: .g_Purple,
+//                heightRatio: 0.3,
+//                text: "第3問 / 10問"
+//            )
             VStack {
                 RoundRectangleView(heightRatio: 0.8)
             }
