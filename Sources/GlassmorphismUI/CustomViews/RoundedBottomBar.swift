@@ -1,23 +1,24 @@
 //
-//  SwiftUIView.swift
+//  File.swift
 //  GlassmorphismUI
 //
-//  Created by nekoribocchi on 2025/03/20.
+//  Created by nekoribocchi on 2025/03/17.
 //
 
 import SwiftUI
 
+
 @available(iOS 14.0, *)
-public struct RoundedTopBar: View {
+public struct RoundedBottomBar: View {
     var startColor: Color
-    var endColor: Color
+    var endColor: Color?
     var heightRatio: CGFloat
     var text: String?
     var isGradient: Bool
     
-    public init(startColor: Color = .g_Orange,
-                endColor: Color = .g_Purple,
-                heightRatio: CGFloat = 0.3,
+    public init(startColor: Color = .white,
+                endColor: Color? = nil,
+                heightRatio: CGFloat = 0.15,
                 text: String? = nil,
                 isGradient: Bool = true) {
         self.startColor = startColor
@@ -29,17 +30,18 @@ public struct RoundedTopBar: View {
     
     public var body: some View {
         RoundedBarBase(startColor: startColor,
-                       endColor: endColor,
+                       endColor: endColor ?? .white,
                        heightRatio: heightRatio,
                        text: text,
-                       position: .top,
+                       position: .bottom,
                        isGradient: isGradient)
     }
 }
 
+
 @available(iOS 14.0, *)
-struct RoundedTopBar_preview: PreviewProvider {
+struct RoundedBottomBar_Previews: PreviewProvider {
     static var previews: some View {
-            RoundedTopBar(text: "第3問 / 10問", isGradient: true) 
+            RoundedBottomBar(text: "", isGradient: false)
     }
 }
