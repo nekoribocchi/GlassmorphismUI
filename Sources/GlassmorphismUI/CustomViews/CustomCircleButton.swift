@@ -14,6 +14,18 @@ public struct CustomCircleButton: View {
     var size: CGFloat = 50
     var icon: Image?
     
+    public init(
+            action: @escaping () -> Void,
+            color: Color = .g_Orange,
+            size: CGFloat = 50,
+            icon: Image? = nil
+        ) {
+            self.action = action
+            self.color = color
+            self.size = size
+            self.icon = icon
+        }
+    
     public var body: some View {
         Button(action: action) {
             ZStack {
