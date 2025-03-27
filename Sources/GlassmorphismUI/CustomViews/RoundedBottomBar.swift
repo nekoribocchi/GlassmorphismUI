@@ -44,27 +44,6 @@ public struct RoundedBottomBar: View {
                     position: .bottom,
                     isGradient: isGradient
                 )
-
-                // ボタン群（バーの中に配置）
-                HStack {
-                    CustomCircleButton(action: {
-                        print("設定ボタンが押された")
-                    }, size: 60, icon: Image(systemName: "gearshape.fill"))
-
-                    Spacer()
-
-                    CustomCircleButton(action: {
-                        print("ゲームボタンが押された")
-                    }, size: 60, icon: Image(systemName: "gamecontroller.fill"))
-
-                    Spacer()
-
-                    CustomCircleButton(action: {
-                        print("メダルボタンが押された")
-                    }, size: 60, icon: Image(systemName: "medal.fill"))
-                }
-                .padding(.horizontal, 40)
-                .padding(.bottom, geometry.size.height * heightRatio * 0.3) // バー内中央寄せ
             }
             .edgesIgnoringSafeArea(.bottom)
         }
