@@ -8,13 +8,13 @@
 import SwiftUI
 
 @available(iOS 13.0.0, *)
-struct CustomCircleButton: View {
+public struct CustomCircleButton: View {
     var action: () -> Void
     var color: Color = .g_Orange
     var size: CGFloat = 50
     var icon: Image?
     
-    var body: some View {
+    public var body: some View {
         Button(action: action) {
             ZStack {
                 Circle()
