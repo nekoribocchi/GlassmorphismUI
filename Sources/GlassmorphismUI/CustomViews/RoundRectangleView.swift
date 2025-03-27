@@ -8,7 +8,7 @@
 import SwiftUICore
 import SwiftUI
 
-@available(iOS 15.0, *)
+@available(iOS 14.0, *)
 struct RoundRectangleView: View {
     
     var heightRatio: CGFloat
@@ -18,7 +18,7 @@ struct RoundRectangleView: View {
 
     }
     
-    @available(iOS 15.0, *)
+    @available(iOS 14.0, *)
     var body: some View {
         GeometryReader { geometry in
             Rectangle()
@@ -37,7 +37,7 @@ struct RoundRectangleView: View {
     }
 }
 
-@available(iOS 15.0, *)
+@available(iOS 14.0, *)
 struct RoundRectangleView_Preview: PreviewProvider {
     static var previews: some View {
         ZStack {
