@@ -9,7 +9,7 @@ import SwiftUICore
 import SwiftUI
 
 @available(iOS 14.0, *)
-struct RoundRectangleView: View {
+public struct RoundRectangleView: View {
     
     var heightRatio: CGFloat
     
@@ -19,7 +19,7 @@ struct RoundRectangleView: View {
     }
     
     @available(iOS 14.0, *)
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             Rectangle()
                 .cornerRadius(50)
