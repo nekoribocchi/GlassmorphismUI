@@ -13,7 +13,7 @@ public struct RoundRectangleView: View {
     
     var heightRatio: CGFloat
     
-    init(heightRatio: CGFloat = 0.3) {
+     public init(heightRatio: CGFloat = 0.3) {
         self.heightRatio = heightRatio
 
     }
