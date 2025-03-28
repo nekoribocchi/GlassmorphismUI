@@ -24,7 +24,7 @@ struct QuizView_Previews: PreviewProvider {
         ZStack {
             GradientBackground(startColor: .g_Orange, endColor: .g_Purple)
             RoundedTopBar(text: "第3問 / 10問", isGradient: true)
-            RoundRectangleView(heightRatio: 0.8)
+            //RoundRectangleView(heightRatio: 0.8)
             RoundedBottomBar(opacity: 0.3, text: "", isGradient: false)
         }
     }
