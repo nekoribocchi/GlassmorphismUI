@@ -46,8 +46,8 @@ public struct RoundedBarBase: View {
                 ZStack {
                     if isGradient {
                         LinearGradient(gradient: Gradient(colors: [startColor, endColor]),
-                                       startPoint: .topLeading,
-                                       endPoint: .bottomTrailing)
+                                       startPoint: .top,
+                                       endPoint: .bottom)
                         .opacity(opacity)
                         .frame(height: geometry.size.height * heightRatio)
                             .clipShape(PartialRoundedRectangle(
@@ -86,7 +86,6 @@ struct RoundedBarBase_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             RoundedTopBar(text: "第3問 / 10問", isGradient: true)
-          //  RoundRectangleView(heightRatio: 0.8)
             RoundedBottomBar(opacity: 0.1, text: "", isGradient: false)
         }
     }

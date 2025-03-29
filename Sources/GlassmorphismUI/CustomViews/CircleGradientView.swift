@@ -26,13 +26,13 @@ public struct CircleGradientView<Content: View>: View{
                         endPoint: .bottom
                     )
                 )
-                .frame(maxWidth: 400, maxHeight: 400)
-                                .shadow(radius: 10)
-                                .padding()
+                .frame(maxWidth: 500, maxHeight: 500)
+                .shadow(radius: 10)
+                .padding()
             
             content
-                           .foregroundColor(.white)
-                           .multilineTextAlignment(.center)
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
         }
     }
     
@@ -42,10 +42,10 @@ public struct CircleGradientView<Content: View>: View{
     CircleGradientView(content: {
         VStack{
             Text("30点")
-                .font(.title)
-                .bold()
+                .font(.system(size: 80,weight: .bold, design: .serif))
+          
             Text("惜しい。もう少し！")
-                .font(.subheadline)
+                .font(.system(size: 20,weight: .bold,design: .serif))
         }
     })
 }

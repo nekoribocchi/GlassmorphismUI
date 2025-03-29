@@ -21,6 +21,7 @@ public struct GradientBackground: View {
     public var body: some View {
         LinearGradient(gradient: Gradient(colors: [startColor, endColor]), startPoint: .top, endPoint:.bottom)
             .edgesIgnoringSafeArea(.all)
+        
     }
 }
 
