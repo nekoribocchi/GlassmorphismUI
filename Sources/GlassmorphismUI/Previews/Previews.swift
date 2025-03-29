@@ -9,7 +9,7 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 struct FirstView_Previews: PreviewProvider {
-
+    
     static var previews: some View {
         ZStack {
             GradientBackground(startColor: .g_Orange, endColor: .g_Purple)
@@ -19,13 +19,27 @@ struct FirstView_Previews: PreviewProvider {
 }
 @available(iOS 14.0, *)
 struct QuizView_Previews: PreviewProvider {
-
+    
     static var previews: some View {
         ZStack {
-            GradientBackground(startColor: .g_Orange, endColor: .g_Purple)
+            //GradientBackground(startColor: .g_Orange, endColor: .g_Purple)
             RoundedTopBar(text: "第3問 / 10問", isGradient: true)
             //RoundRectangleView(heightRatio: 0.8)
             RoundedBottomBar(opacity: 0.3, text: "", isGradient: false)
+            
+            VStack{
+                SimpleButton(title: "ホーム画面に戻る", action: {
+                    print("送信されました")
+                })
+                .padding()
+                SimpleButton(
+                    title: "リプレイ",
+                    action: {print("送信されました")},
+                    backGroundColor: .r_Orange
+                )
+                .padding()
+            }
+            
         }
     }
 }
