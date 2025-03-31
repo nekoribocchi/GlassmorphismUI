@@ -17,6 +17,8 @@ struct IconButton: View {
     let iconColor: Color
     let action: () -> Void
     
+    @State private var isPressed = false
+    
     init(
         title: String,
         backGroundColor: Color = .r_Purple,
@@ -36,7 +38,13 @@ struct IconButton: View {
     }
 
     var body: some View {
-        Button(action: action) {
+        Button(action: {
+            isPressed = true
+            DispatchQueue.main.asyncAfter(deadline: .now()){
+                isPressed = false
+                action()
+            }
+        }) {
             ZStack{
                 HStack {
                     Spacer()
@@ -58,14 +66,15 @@ struct IconButton: View {
                             .overlay(
                                 Image(systemName: iconName)
                                     .foregroundColor(iconColor)
-                                    .font(.system(size: 16, weight: .bold))
+                                    .font(.system(size: 19, weight: .heavy))
                             )
                             .padding(.trailing, 20)
                     }
-                    
                 }
             }
+            
         }
+        
             .frame(height: 80)
             .frame(maxWidth: .infinity)
             .background(
@@ -78,6 +87,8 @@ struct IconButton: View {
             .clipShape(Capsule())
             .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 3)
             .padding(.horizontal)
+            .scaleEffect(isPressed ? 0.9 : 1.0)
+            .animation(.easeOut(duration: 0.2), value: isPressed)
         }
     }
 

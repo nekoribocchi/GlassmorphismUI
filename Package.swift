@@ -15,7 +15,7 @@ let package = Package(
             .target(
                 name: "GlassmorphismUI",
                 resources: [
-                    .process("komadori-mini.otf")
+                    .process("Fonts")
                 ]
             ),
         ]
