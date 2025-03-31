@@ -15,6 +15,8 @@ public struct ButtonBase: View {
     let textColor: Color
     let font: String
     let cornerRadius: CGFloat
+    let isFurigana: Bool
+    let furigana: String
     let iconName: String?
     let iconColor: Color
     let showPressAnimation: Bool
@@ -29,9 +31,11 @@ public struct ButtonBase: View {
         textColor: Color = .white,
         cornerRadius: CGFloat = 60,
         font: String = "",
+        isFurigana: Bool = true,
+        furigana:String = "",
         iconName: String? = nil,
         iconColor: Color = .white,
-        showPressAnimation: Bool = true,
+        showPressAnimation: Bool = false,
         action: @escaping () -> Void
     ) {
         self.title = title
@@ -43,6 +47,8 @@ public struct ButtonBase: View {
         self.showPressAnimation = showPressAnimation
         self.action = action
         self.font = font
+        self.isFurigana = isFurigana
+        self.furigana = furigana
     }
     
     // MARK: - Body
@@ -61,11 +67,17 @@ public struct ButtonBase: View {
             ZStack {
                 HStack {
                     Spacer()
-                    
-                    Text(title)
-                        .font(.custom(font, size: 20))
-                        .foregroundColor(textColor)
-                    
+                    VStack{
+                        if(isFurigana){
+                            Text(furigana)
+                                .font(.custom(font, size: 10))
+                                .foregroundColor(textColor)
+                        }
+                        Text(title)
+                            .font(.custom(font, size: 20))
+                            .foregroundColor(textColor)
+    
+                    }
                     Spacer()
                 }
                 

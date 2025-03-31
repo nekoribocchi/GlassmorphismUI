@@ -17,6 +17,8 @@ public extension ButtonBase {
         textColor: Color = .white,
         font: String = "",
         cornerRadius: CGFloat = 60,
+        isFurigana: Bool = false,
+        furigana: String = "",
         iconName: String,
         iconColor: Color = .white,
         action: @escaping () -> Void
@@ -27,6 +29,8 @@ public extension ButtonBase {
             textColor: textColor,
             cornerRadius: cornerRadius,
             font: font,
+            isFurigana: isFurigana,
+            furigana: furigana,
             iconName: iconName,
             iconColor: iconColor,
             action: action
@@ -39,6 +43,8 @@ public extension ButtonBase {
         textColor: Color = .white,
         cornerRadius: CGFloat = 60,
         font: String = "",
+        isFurigana: Bool = false,
+        furigana: String = "",
         showPressAnimation: Bool = false,
         action: @escaping () -> Void
     ) -> ButtonBase {
@@ -48,6 +54,8 @@ public extension ButtonBase {
             textColor: textColor,
             cornerRadius: cornerRadius,
             font: font,
+            isFurigana: isFurigana,
+            furigana: furigana,
             iconName: nil,
             showPressAnimation: showPressAnimation,
             action: action
@@ -61,6 +69,8 @@ public extension ButtonBase {
     VStack(spacing: 20) {
         ButtonBase.icon(
             title: "ホーム画面に戻る",
+            isFurigana: true,
+            furigana: "ほーむがめんにもどる",
             iconName: "checkmark",
             action: {
                 print("チェックされた")
@@ -70,12 +80,13 @@ public extension ButtonBase {
         ButtonBase.icon(
             title: "キャンセル",
             backgroundColor: .r_Orange,
+            isFurigana: false,
             iconName: "xmark",
             action: {
                 print("キャンセル")
             }
         )
-
+        
         ButtonBase.simple(
             title: "シンプルボタン",
             action: {
