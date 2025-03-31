@@ -93,12 +93,12 @@ public struct ButtonBase: View {
                                     .foregroundColor(iconColor)
                                     .font(.system(size: 19, weight: .heavy))
                             )
-                            .padding(.trailing, 20)
+                            .padding(.trailing, 10)
                     }
                 }
             }
         }
-        .frame(height: 80)
+        .frame(height: 70)
         .frame(maxWidth: .infinity)
         .background(
             AngularGradient(
