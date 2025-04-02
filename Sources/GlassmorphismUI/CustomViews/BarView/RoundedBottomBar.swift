@@ -44,7 +44,7 @@ public struct RoundedBottomBar: View {
                     position: .bottom,
                     isGradient: isGradient
                 ){
-                    Text("TEST")
+                    Text("")
                 }
             }
             .edgesIgnoringSafeArea(.bottom)
