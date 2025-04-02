@@ -35,7 +35,7 @@ public struct ButtonBase: View {
         furigana:String = "",
         iconName: String? = nil,
         iconColor: Color = .white,
-        showPressAnimation: Bool = false,
+        showPressAnimation: Bool = true,
         action: @escaping () -> Void
     ) {
         self.title = title

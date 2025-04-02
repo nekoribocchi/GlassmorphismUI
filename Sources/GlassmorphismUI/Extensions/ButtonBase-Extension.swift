@@ -45,7 +45,6 @@ public extension ButtonBase {
         font: String = "",
         isFurigana: Bool = false,
         furigana: String = "",
-        showPressAnimation: Bool = false,
         action: @escaping () -> Void
     ) -> ButtonBase {
         ButtonBase(
@@ -57,7 +56,6 @@ public extension ButtonBase {
             isFurigana: isFurigana,
             furigana: furigana,
             iconName: nil,
-            showPressAnimation: showPressAnimation,
             action: action
         )
     }
@@ -97,7 +95,6 @@ public extension ButtonBase {
         ButtonBase.simple(
             title: "アニメーション付き",
             backgroundColor: .gray,
-            showPressAnimation: true,
             action: {
                 print("キャンセルされました")
             }
