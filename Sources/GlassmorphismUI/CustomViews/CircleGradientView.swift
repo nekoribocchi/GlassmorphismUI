@@ -11,9 +11,14 @@ import SwiftUI
 @available(iOS 13.0, *)
 public struct CircleGradientView<Content: View>: View{
     let content: Content
+    var size: CGFloat
     
-    public init(@ViewBuilder content: () -> Content){
+    public init(
+        @ViewBuilder content: () -> Content,
+        size: CGFloat = 500
+    ){
         self.content = content()
+        self.size = size
     }
     
     public var body: some View {
@@ -26,7 +31,7 @@ public struct CircleGradientView<Content: View>: View{
                         endPoint: .bottom
                     )
                 )
-                .frame(maxWidth: 500, maxHeight: 500)
+                .frame(maxWidth: size, maxHeight: size)
                 .shadow(radius: 10)
                 .padding()
             
