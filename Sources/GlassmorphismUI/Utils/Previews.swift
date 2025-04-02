@@ -23,7 +23,9 @@ struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             //GradientBackground(startColor: .g_Orange, endColor: .g_Purple)
-            RoundedTopBar(text: "第3問 / 10問", isGradient: true)
+            RoundedTopBar(isGradient: true){
+                Text("スコア")
+            }
             //RoundRectangleView(heightRatio: 0.8)
             RoundedBottomBar(opacity: 0.3, text: "", isGradient: false)
             

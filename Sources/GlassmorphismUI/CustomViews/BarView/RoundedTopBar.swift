@@ -8,38 +8,51 @@
 import SwiftUI
 
 @available(iOS 14.0, *)
-public struct RoundedTopBar: View {
+public struct RoundedTopBar<Content: View>: View {
     var startColor: Color
     var endColor: Color
     var heightRatio: CGFloat
-    var text: String?
     var isGradient: Bool
+    var content: Content
     
     public init(startColor: Color = .g_Orange,
                 endColor: Color = .g_Purple,
                 heightRatio: CGFloat = 0.3,
-                text: String? = nil,
-                isGradient: Bool = true) {
+                isGradient: Bool = true,
+                @ViewBuilder content: () -> Content) {
         self.startColor = startColor
         self.endColor = endColor
         self.heightRatio = heightRatio
-        self.text = text
         self.isGradient = isGradient
+        self.content = content()
     }
     
     public var body: some View {
-        RoundedBarBase(startColor: startColor,
-                       endColor: endColor,
-                       heightRatio: heightRatio,
-                       text: text,
-                       position: .top,
-                       isGradient: isGradient)
+        ZStack{
+            
+            RoundedBarBase(startColor: startColor,
+                           endColor: endColor,
+                           heightRatio: heightRatio,
+                           position: .top,
+                           isGradient: isGradient){
+                content
+            }
+
+        }
+    }
+    
+    func topPadding(for ratio: CGFloat) -> CGFloat {
+        let topPaddoing = UIScreen.main.bounds.height * ratio
+        return topPaddoing / 4
     }
 }
 
 @available(iOS 14.0, *)
 struct RoundedTopBar_preview: PreviewProvider {
     static var previews: some View {
-            RoundedTopBar(text: "第3問 / 10問", isGradient: true) 
+        RoundedTopBar(isGradient: true, content: {
+            Text("スコア")
+                
+        })
     }
 }

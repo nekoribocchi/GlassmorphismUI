@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 14.0, *)
-public struct RoundedBarBase: View {
+public struct RoundedBarBase<Content: View>: View {
     var isGradient: Bool
     var startColor: Color
     var endColor: Color
@@ -16,7 +16,7 @@ public struct RoundedBarBase: View {
     var heightRatio: CGFloat
     var text: String?
     var position: Position
-    
+    var content:Content
     public enum Position {
         case top
         case bottom
@@ -28,7 +28,8 @@ public struct RoundedBarBase: View {
                 opacity: Double = 1,
                 text: String? = nil,
                 position: Position = .top,
-                isGradient: Bool = true) {
+                isGradient: Bool = true,
+                @ViewBuilder content: ()->Content) {
         self.startColor = startColor
         self.endColor = endColor
         self.heightRatio = heightRatio
@@ -36,6 +37,7 @@ public struct RoundedBarBase: View {
         self.text = text
         self.position = position
         self.isGradient = isGradient
+        self.content = content()
     }
     
     public var body: some View {
@@ -67,9 +69,7 @@ public struct RoundedBarBase: View {
                     }
                    
                     
-                    Text(text ?? "")
-                        .font(.headline)
-                        .foregroundColor(.white)
+                    content
                 }
                 .shadow(radius: 5)
                 
@@ -85,7 +85,9 @@ struct RoundedBarBase_Previews: PreviewProvider {
 
     static var previews: some View {
         ZStack {
-            RoundedTopBar(text: "第3問 / 10問", isGradient: true)
+            RoundedTopBar(isGradient: true){
+                Text("ランキング")
+            }
             RoundedBottomBar(opacity: 0.1, text: "", isGradient: false)
         }
     }
