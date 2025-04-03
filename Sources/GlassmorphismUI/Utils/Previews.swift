@@ -13,7 +13,9 @@ struct FirstView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             GradientBackground(startColor: .g_Orange, endColor: .g_Purple)
-            RoundedBottomBar(text: "", isGradient: false)
+            RoundedBottomBar(text: "", isGradient: false){
+                Text("a")
+            }
         }
     }
 }
@@ -27,7 +29,9 @@ struct QuizView_Previews: PreviewProvider {
                 Text("スコア")
             }
             //RoundRectangleView(heightRatio: 0.8)
-            RoundedBottomBar(opacity: 0.3, text: "", isGradient: false)
+            RoundedBottomBar(opacity: 0.3, text: "", isGradient: false){
+                
+            }
             
             VStack{
                 SimpleButton(title: "ホーム画面に戻る", action: {

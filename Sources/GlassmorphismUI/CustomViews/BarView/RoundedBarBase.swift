@@ -88,7 +88,7 @@ struct RoundedBarBase_Previews: PreviewProvider {
             RoundedTopBar(isGradient: true){
                 Text("ランキング")
             }
-            RoundedBottomBar(opacity: 0.1, text: "", isGradient: false)
+            RoundedBottomBar(opacity: 0.1, text: "", isGradient: false){}
         }
     }
 }
