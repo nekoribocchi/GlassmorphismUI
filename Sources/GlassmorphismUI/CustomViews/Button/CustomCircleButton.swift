@@ -42,7 +42,7 @@ public struct CustomCircleButton<Content: View>: View {
                             )
                         )
                         .frame(width: size, height: size)
-                        .shadow(radius: 3)
+                        //.shadow(radius: 3)
                     
                     if let icon = icon {
                         icon
