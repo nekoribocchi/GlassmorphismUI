@@ -16,7 +16,7 @@ public struct CustomCircleButton: View {
     
     public init(
             action: @escaping () -> Void,
-            color: Color = .g_Orange,
+            color: Color = .r_Orange,
             size: CGFloat = 50,
             icon: Image? = nil
         ) {
@@ -30,7 +30,13 @@ public struct CustomCircleButton: View {
         Button(action: action) {
             ZStack {
                 Circle()
-                    .fill(color)
+                    .fill(
+                        AngularGradient(
+                            gradient: Gradient(colors: [color, color.opacity(0.7)]),
+                            center: .center,
+                            angle: .degrees(270)
+                        )
+                    )
                     .frame(width: size, height: size)
                     .shadow(radius: 5)
                 
