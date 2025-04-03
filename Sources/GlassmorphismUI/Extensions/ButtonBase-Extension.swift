@@ -13,6 +13,7 @@ import SwiftUI
 public extension ButtonBase {
     static func icon(
         title: String,
+        heightRatio: CGFloat = 0.1,
         backgroundColor: Color = .r_Purple,
         textColor: Color = .white,
         font: String = "",
@@ -25,6 +26,7 @@ public extension ButtonBase {
     ) -> ButtonBase {
         ButtonBase(
             title: title,
+            heightRatio: heightRatio,
             backgroundColor: backgroundColor,
             textColor: textColor,
             cornerRadius: cornerRadius,
@@ -39,6 +41,7 @@ public extension ButtonBase {
     
     static func simple(
         title: String,
+        heightRatio: CGFloat = 0.1,
         backgroundColor: Color = .r_Purple,
         textColor: Color = .white,
         cornerRadius: CGFloat = 60,
@@ -49,6 +52,7 @@ public extension ButtonBase {
     ) -> ButtonBase {
         ButtonBase(
             title: title,
+            heightRatio: heightRatio,
             backgroundColor: backgroundColor,
             textColor: textColor,
             cornerRadius: cornerRadius,
@@ -77,6 +81,7 @@ public extension ButtonBase {
         
         ButtonBase.icon(
             title: "キャンセル",
+            heightRatio: 0.1,
             backgroundColor: .r_Orange,
             isFurigana: false,
             iconName: "xmark",

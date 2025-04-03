@@ -11,6 +11,7 @@ import SwiftUI
 public struct ButtonBase: View {
     // MARK: - Properties
     let title: String
+    let heightRatio: CGFloat
     let backgroundColor: Color
     let textColor: Color
     let font: String
@@ -27,6 +28,7 @@ public struct ButtonBase: View {
     // MARK: - Initializer
     public init(
         title: String,
+        heightRatio: CGFloat = 0.1,
         backgroundColor: Color = .r_Purple,
         textColor: Color = .white,
         cornerRadius: CGFloat = 60,
@@ -39,6 +41,7 @@ public struct ButtonBase: View {
         action: @escaping () -> Void
     ) {
         self.title = title
+        self.heightRatio = heightRatio
         self.backgroundColor = backgroundColor
         self.textColor = textColor
         self.cornerRadius = cornerRadius
@@ -98,7 +101,7 @@ public struct ButtonBase: View {
                 }
             }
         }
-        .frame(height: 70)
+        .frame(height: UIScreen.main.bounds.height * heightRatio)
         .frame(maxWidth: .infinity)
         .background(
             AngularGradient(
