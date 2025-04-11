@@ -76,7 +76,7 @@ You can customize the color, gradient, height, and more:
 
 
 ``` Swift
- RoundedBottomBar(startColor:.blue,
+        RoundedBottomBar(startColor:.blue,
                          endColor: .green,
                          opacity: 0.8,
                          heightRatio: 0.3,
