@@ -64,11 +64,8 @@ public struct RoundedBarBase<Content: View>: View {
                                 .clipShape(PartialRoundedRectangle(
                                     radius: 60,
                                     corners: position == .top ? [.bottomLeft, .bottomRight] : [.topLeft, .topRight]
-                                    
                                 ))
                     }
-                   
-                    
                     content
                 }
                 .shadow(radius: 5)
@@ -87,8 +84,11 @@ struct RoundedBarBase_Previews: PreviewProvider {
         ZStack {
             RoundedTopBar(isGradient: true){
                 Text("ランキング")
+                    .foregroundColor(.white)
             }
-            RoundedBottomBar(opacity: 0.1, text: "", isGradient: false){}
+            RoundedBottomBar(opacity: 0.8, text: "", isGradient: false){
+                
+            }
         }
     }
 }

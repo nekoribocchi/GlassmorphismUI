@@ -56,13 +56,11 @@ public struct CustomCircleButton<Content: View>: View {
                     content
                     
                 }
-                
-                
             }
         }
     }
-
 }
+
 @available(iOS 13.0.0, *)
 #Preview {
     HStack{

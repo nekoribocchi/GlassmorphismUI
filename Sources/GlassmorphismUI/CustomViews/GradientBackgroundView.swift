@@ -9,7 +9,6 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct GradientBackground: View {
-    
     var startColor : Color
     var endColor : Color
     
@@ -21,7 +20,6 @@ public struct GradientBackground: View {
     public var body: some View {
         LinearGradient(gradient: Gradient(colors: [startColor, endColor]), startPoint: .top, endPoint:.bottom)
             .edgesIgnoringSafeArea(.all)
-        
     }
 }
 

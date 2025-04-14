@@ -48,7 +48,7 @@ public struct CircleGradientView<Content: View>: View{
         VStack{
             Text("30点")
                 .font(.potta(size: 20))
-          
+            
             Text("惜しい。もう少し！")
                 .font(.custom("PottaOne-Regular", size: 40))
         }

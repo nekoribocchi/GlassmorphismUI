@@ -10,7 +10,6 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 public struct RoundRectangleView<Content: View>: View {
-    
     var heightRatio: CGFloat
     var content: Content
     
@@ -36,11 +35,9 @@ public struct RoundRectangleView<Content: View>: View {
                         height: geometry.size.height * heightRatio
                     )
             }
-            // ZStack全体を画面下部に配置
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .bottom)
         }
     }
-    
 }
 
 
@@ -49,7 +46,6 @@ struct RoundRectangleView_Previews: PreviewProvider {
     @available(iOS 16.0, *)
     static var previews: some View {
         ZStack {
-            // 背景色
             LinearGradient(colors: [Color.blue.opacity(0.3), Color.purple.opacity(0.3)],
                            startPoint: .top,
                            endPoint: .bottom)
@@ -57,8 +53,6 @@ struct RoundRectangleView_Previews: PreviewProvider {
             
             VStack {
                 Spacer()
-                
-                // RoundRectangleView の中に好きなビューを配置できる！
                 RoundRectangleView(heightRatio: 0.7) {
                     List{
                         Text("a")
@@ -66,7 +60,6 @@ struct RoundRectangleView_Previews: PreviewProvider {
                     }
                     .listRowBackground(Color.clear)
                     .scrollContentBackground(.hidden)
-                    
                 }
                 .padding()
             }

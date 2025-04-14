@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 @available(iOS 14.0, *)
 public struct RoundedBottomBar<Content: View>: View {
     var startColor: Color
@@ -24,7 +23,7 @@ public struct RoundedBottomBar<Content: View>: View {
                 heightRatio: CGFloat = 0.15,
                 text: String? = nil,
                 isGradient: Bool = true,
-    @ViewBuilder content: () -> Content? = {
+                @ViewBuilder content: () -> Content? = {
         nil
     }) {
         self.startColor = startColor
@@ -35,50 +34,52 @@ public struct RoundedBottomBar<Content: View>: View {
         self.isGradient = isGradient
         self.content = content()
     }
-
+    
     public var body: some View {
-          GeometryReader { geometry in
-              ZStack(alignment: .bottom) {
-                  if let content = content {
-                      // 背景バー
-                      RoundedBarBase(
-                          startColor: startColor,
-                          endColor: endColor ?? .white,
-                          heightRatio: heightRatio,
-                          opacity: opacity ?? 0.3,
-                          text: text,
-                          position: .bottom,
-                          isGradient: isGradient
-                      ) {
-                          content
-                      }
-                  } else {
-                      // 中身がない場合でも背景バーだけ出す
-                      RoundedBarBase(
-                          startColor: startColor,
-                          endColor: endColor ?? .white,
-                          heightRatio: heightRatio,
-                          opacity: opacity ?? 0.3,
-                          text: text,
-                          position: .bottom,
-                          isGradient: isGradient
-                      ) {
-                          EmptyView()
-                      }
-                  }
-              }
-              .edgesIgnoringSafeArea(.bottom)
-          }
-      }
-  }
+        GeometryReader { geometry in
+            ZStack(alignment: .bottom) {
+                if let content = content {
+                    RoundedBarBase(
+                        startColor: startColor,
+                        endColor: endColor ?? .white,
+                        heightRatio: heightRatio,
+                        opacity: opacity ?? 0.3,
+                        text: text,
+                        position: .bottom,
+                        isGradient: isGradient
+                    ) {
+                        content
+                    }
+                } else {
+                    RoundedBarBase(
+                        startColor: startColor,
+                        endColor: endColor ?? .white,
+                        heightRatio: heightRatio,
+                        opacity: opacity ?? 0.3,
+                        text: text,
+                        position: .bottom,
+                        isGradient: isGradient
+                    ) {
+                        EmptyView()
+                    }
+                }
+            }
+            .edgesIgnoringSafeArea(.bottom)
+        }
+    }
+}
+
 @available(iOS 14.0, *)
 struct RoundedBottomBar_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            GradientBackground(startColor: .g_Orange, endColor: .g_Purple)
-            RoundedBottomBar(text: "", isGradient: false){
-                Text("TEST")
-            }
+            RoundedBottomBar(startColor:.g_Orange,
+                             endColor: .g_Purple,
+                             opacity: 0.8,
+                             heightRatio: 0.15,
+                             text: nil,
+                             isGradient: true){
+                    Text("Insert any custom View content here")
+                    .foregroundColor(.white)
         }
     }
 }

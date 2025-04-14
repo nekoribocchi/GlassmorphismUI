@@ -29,7 +29,6 @@ public struct RoundedTopBar<Content: View>: View {
     
     public var body: some View {
         ZStack{
-            
             RoundedBarBase(startColor: startColor,
                            endColor: endColor,
                            heightRatio: heightRatio,
@@ -37,7 +36,6 @@ public struct RoundedTopBar<Content: View>: View {
                            isGradient: isGradient){
                 content
             }
-
         }
     }
     
@@ -50,9 +48,22 @@ public struct RoundedTopBar<Content: View>: View {
 @available(iOS 14.0, *)
 struct RoundedTopBar_preview: PreviewProvider {
     static var previews: some View {
-        RoundedTopBar(isGradient: true, content: {
-            Text("スコア")
-                
-        })
+        RoundedTopBar(){
+            Text("Insert any custom View content here")
+                .foregroundColor(.white)
+        }
+    }
+}
+
+@available(iOS 14.0, *)
+struct RoundedTopBar_custom_preview: PreviewProvider {
+    static var previews: some View {
+        RoundedTopBar(startColor: .blue,
+                      endColor: .green,
+                      heightRatio:0.3,
+                      isGradient:true){
+            Text("Insert any custom View content here")
+                .foregroundColor(.white)
+        }
     }
 }

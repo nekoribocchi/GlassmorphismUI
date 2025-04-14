@@ -79,7 +79,7 @@ public struct ButtonBase: View {
                         Text(title)
                             .font(.custom(font, size: 20))
                             .foregroundColor(textColor)
-    
+                        
                     }
                     Spacer()
                 }
