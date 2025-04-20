@@ -96,14 +96,7 @@ public extension ButtonBase {
                 print("送信されました")
             }
         )
-        
-        ButtonBase.simple(
-            title: "アニメーション付き",
-            backgroundColor: .gray,
-            action: {
-                print("キャンセルされました")
-            }
-        )
+
     }
     .padding()
 }

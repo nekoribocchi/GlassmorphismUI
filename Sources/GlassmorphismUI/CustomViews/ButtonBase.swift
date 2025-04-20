@@ -67,39 +67,15 @@ public struct ButtonBase: View {
                 action()
             }
         }) {
-            ZStack {
-                HStack {
-                    Spacer()
-                    VStack{
-                        if(isFurigana){
-                            Text(furigana)
-                                .font(.custom(font, size: 10))
-                                .foregroundColor(textColor)
-                        }
-                        Text(title)
-                            .font(.custom(font, size: 20))
-                            .foregroundColor(textColor)
-                        
-                    }
-                    Spacer()
-                }
-                
-                if let iconName = iconName {
-                    HStack {
-                        Spacer()
-                        
-                        Circle()
-                            .fill(Color.white.opacity(0.3))
-                            .frame(width: 50, height: 50)
-                            .overlay(
-                                Image(systemName: iconName)
-                                    .foregroundColor(iconColor)
-                                    .font(.system(size: 19, weight: .heavy))
-                            )
-                            .padding(.trailing, 10)
-                    }
-                }
-            }
+            ButtonLabel(
+                title: title,
+                textColor: textColor,
+                font: font,
+                isFurigana: isFurigana,
+                furigana: furigana,
+                iconName: iconName,
+                iconColor: iconColor
+            )
         }
         .frame(height: UIScreen.main.bounds.height * heightRatio)
         .frame(maxWidth: .infinity)
@@ -115,5 +91,46 @@ public struct ButtonBase: View {
         .scaleEffect(showPressAnimation && isPressed ? 0.9 : 1.0)
         .animation(.easeOut(duration: 0.2), value: isPressed)
     }
+    
+    private struct ButtonLabel: View {
+        let title: String
+        let textColor: Color
+        let font: String
+        let isFurigana: Bool
+        let furigana: String
+        let iconName: String?
+        let iconColor: Color
+        
+        var body: some View {
+            ZStack{
+                Spacer()
+                VStack(spacing:2){
+                    if isFurigana{
+                        Text(furigana)
+                            .font(.custom(font, size: 13))
+                            .foregroundColor(textColor)
+                    }
+                    Text(title)
+                        .font(.custom(font, size: 20))
+                        .foregroundColor(textColor)
+                }
+                Spacer()
+                
+                if let iconName = iconName {
+                    Circle()
+                        .fill(Color.white.opacity(0.3))
+                        .frame(width: 50, height: 50)
+                        .overlay(
+                            Image(systemName: iconName)
+                                .foregroundColor(iconColor)
+                                .font(.system(size: 19, weight: .heavy))
+                        )
+                        .padding(.trailing, 10)
+                }
+            }
+        }
+    }
 }
+
+
 
