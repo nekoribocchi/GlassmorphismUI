@@ -29,14 +29,13 @@ struct QuizView_Previews: PreviewProvider {
             RoundedBottomBar(opacity: 0.3, text: "", isGradient: false){
             }
             VStack{
-                SimpleButton(title: "ホーム画面に戻る", action: {
+                CustomButton(title: "ホーム画面に戻る", action: {
                     print("送信されました")
                 })
                 .padding()
-                SimpleButton(
+                CustomButton(
                     title: "リプレイ",
-                    action: {print("送信されました")},
-                    backGroundColor: .r_Orange
+                    backgroundColor: .r_Orange
                 )
                 .padding()
             }

@@ -46,7 +46,7 @@ struct RoundRectangleView_Previews: PreviewProvider {
     @available(iOS 16.0, *)
     static var previews: some View {
         ZStack {
-            LinearGradient(colors: [Color.blue.opacity(0.3), Color.purple.opacity(0.3)],
+            LinearGradient(colors: [Color.g_Purple, .g_Orange],
                            startPoint: .top,
                            endPoint: .bottom)
             .ignoresSafeArea()
@@ -55,8 +55,11 @@ struct RoundRectangleView_Previews: PreviewProvider {
                 Spacer()
                 RoundRectangleView(heightRatio: 0.7) {
                     List{
-                        Text("a")
-                        Text("b")
+                        Text("1st Item")
+                        Text("2nd Item")
+                        Text("3rd Item")
+                        Text("4th Item")
+                        Text("5th Item")
                     }
                     .listRowBackground(Color.clear)
                     .scrollContentBackground(.hidden)

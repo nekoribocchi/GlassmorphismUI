@@ -47,10 +47,10 @@ public struct CircleGradientView<Content: View>: View{
     CircleGradientView(content: {
         VStack{
             Text("30点")
-                .font(.potta(size: 20))
+                .font(.potta(size: 60))
             
             Text("惜しい。もう少し！")
-                .font(.custom("PottaOne-Regular", size: 40))
+                .font(.custom("PottaOne-Regular", size: 20))
         }
     })
 }

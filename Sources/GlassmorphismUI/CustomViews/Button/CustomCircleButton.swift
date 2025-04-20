@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 13.0.0, *)
-public struct CustomCircleButton<Content: View>: View {
+public struct CircleButton<Content: View>: View {
     var action: () -> Void
     var color: Color = .g_Orange
     var size: CGFloat = 50
@@ -64,20 +64,20 @@ public struct CustomCircleButton<Content: View>: View {
 @available(iOS 13.0.0, *)
 #Preview {
     HStack{
-        CustomCircleButton(action: {
+        CircleButton(action: {
             print("ボタンが押された")
         },  size: 80, icon: Image(systemName: "gearshape.fill")){
             
         }
         Spacer()
-        CustomCircleButton(action: {
+        CircleButton(action: {
             print("ボタンが押された")
         },  size: 80, icon: Image(systemName: "gamecontroller.fill")){
             
         }
         Spacer()
         
-        CustomCircleButton(action: {
+        CircleButton(action: {
             print("ボタンが押された")
         }, size: 80, icon: Image(systemName: "medal.fill")){
             
