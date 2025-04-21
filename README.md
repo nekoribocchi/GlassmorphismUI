@@ -1,6 +1,9 @@
 # GlassmorphismUI
+This is a glassmorphism UI package.
+![Neutral Minimal Phone Frames Mockup Pinterest Pin (1)](https://github.com/user-attachments/assets/7b224a6d-d74b-4d2d-8c1c-f494b5ce1cc0)
 
-A SwiftUI component library inspired by elegant glassmorphism design!
+
+
 ### Installation
 
 To add **GlassmophismUI** to your project:
@@ -89,7 +92,7 @@ You can customize the color, gradient, height, and more:
 
 ---
 
-### CustomButton
+### CapsuleButton
 | iPhon 16 Plus | iPad Pro 13-inch |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/f77702f1-376e-4aa4-9c3c-59751fe10ed6" width="500"/> | <img src='https://github.com/user-attachments/assets/f4f09f46-69df-42cf-b5be-ff455d356a56' img width = 500> |
