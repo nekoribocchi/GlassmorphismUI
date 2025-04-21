@@ -1,5 +1,5 @@
 //
-//  CustomButton.swift
+//  CapsuleButton.swift
 //  GlassmorphismUI
 //
 //  Created by nekoribocchi on 2025/03/29.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 13.0, *)
-public struct CustomButton: View {
+public struct CapsuleButton: View {
     // MARK: - Properties
     let title: String
     let heightRatio: CGFloat
@@ -16,7 +16,6 @@ public struct CustomButton: View {
     let textColor: Color
     let font: String
     let cornerRadius: CGFloat
-    let isFurigana: Bool
     let furigana: String
     let iconName: String?
     let iconColor: Color
@@ -47,7 +46,6 @@ public struct CustomButton: View {
         self.iconColor = iconColor
         self.action = action
         self.font = font
-        self.isFurigana = isFurigana
         self.furigana = furigana
     }
     
@@ -123,27 +121,38 @@ public struct CustomButton: View {
         )
     }
 }
+
 @available(iOS 13.0, *)
 #Preview {
     VStack(spacing: 20) {
-        CustomButton(
-            title: "青梅市",
-            furigana: "おうめし",
+        CapsuleButton(
+            title: "Button",
+            heightRatio: 0.15,
+            furigana: "button",
             iconName: "checkmark",
             action: {
                 print("Button Tapped!")
             }
         )
-        
-        CustomButton(
-            title: "青梅市",
-            heightRatio: 0.08,
-            backgroundColor: .r_Orange,
-            iconName: "xmark"
+        CapsuleButton(
+            title: "Button"
         )
         
-        CustomButton(
-            title: "No Furigana"
+        CapsuleButton(
+            title: "Button",
+            heightRatio: 0.08,
+            backgroundColor: .r_Orange,
+            furigana: "button",
+            iconName: "xmark",
+            action: {
+                print("Button Tapped!")
+            }
+            )
+        
+        CapsuleButton(
+            title: "Button",
+            heightRatio: 0.08,
+            backgroundColor: .r_Orange
         )
 
     }
