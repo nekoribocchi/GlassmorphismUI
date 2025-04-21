@@ -89,52 +89,73 @@ You can customize the color, gradient, height, and more:
 
 ---
 
-### Circle Button with Icon
+### CustomButton
 | iPhon 16 Plus | iPad Pro 13-inch |
 |-|-|
-| <img src="" width="500"/> | <img src='' img width = 500> |
+| <img src="https://github.com/user-attachments/assets/f77702f1-376e-4aa4-9c3c-59751fe10ed6" width="500"/> | <img src='https://github.com/user-attachments/assets/f4f09f46-69df-42cf-b5be-ff455d356a56' img width = 500> |
 
 ``` Swift
+CapsuleButton(
+    // Text displayed on the button
+    title: "Button",
+    
+    // Ratio of the button's height to the screen height (10% of screen height)
+    heightRatio: 0.1,
+    
+    // Background color of the button
+    backgroundColor: .r_Purple,
+    
+    // Text color
+    textColor: .white,
+    
+    // Font name used for the button title
+    //Please look at 'How to use custom font'  below
+    font: "PottaOne-Regular",
+    
+    // Furigana (small text above the main title, useful for Japanese reading aid)
+    furigana: "button",
+    
+    // System icon name (e.g., SF Symbols)
+    iconName: "xmark",
+    
+    // Color of the icon
+    iconColor: .white,
+    
+    // Action to perform when the button is tapped
+    action: {
+        print("Button Tapped!")
+    }
+)
 
 ```
+ - **How to use custom font** <br>
+if you want to user custom font, please follow the steps below. <br>
+1. download font from a font distribustion website. (ex. [https://fonts.google.com/](https://fonts.google.com/)) <br>
+2. Add the font to your Xcode project <br>
+Drag and drop the font file (e.g., .ttf or .otf) into your Xcode project.
+3. Update Info.plist <br>
+Open Info.plist and add a new key called Fonts provided by application (or UIAppFonts). Then add the file name of the font, including the extension (e.g., CustomFont.ttf).
 
-### Icon Button with Title
-| iPhon 16 Plus | iPad Pro 13-inch |
-|-|-|
-| <img src="" width="500"/> | <img src='' img width = 500> |
-
-``` Swift
-
-```
-
-
-### Simple Button
-| iPhon 16 Plus | iPad Pro 13-inch |
-|-|-|
-| <img src="" width="500"/> | <img src='' img width = 500> |
-
-``` Swift
-
-```
-
-### Background Gradient
-
-### Simple Button
-| iPhon 16 Plus | iPad Pro 13-inch |
-|-|-|
-| <img src="" width="500"/> | <img src='' img width = 500> |
-
-``` Swift
-
-```
 
 ### Glass-style Rounded Rectangle View
 | iPhon 16 Plus | iPad Pro 13-inch |
 |-|-|
-| <img src="" width="500"/> | <img src='' img width = 500> |
+| <img src="https://github.com/user-attachments/assets/d621647c-c8b7-48a9-8d73-1d745e06a1e8" width="500"/> | <img src='https://github.com/user-attachments/assets/40ea6f62-a4ca-4151-99a6-331706e86a6c' img width = 500> |
 
 ``` Swift
-
+        ZStack {
+            GradientBackground(startColor: .g_Purple, endColor: .g_Orange)
+                
+            VStack {
+                Spacer()
+                RoundRectangleView(heightRatio: 0.7) {
+                    //Add Any View
+                    VStack{
+                        Image(systemName: "star.fill")
+                        Text("Add Any View")
+                    }
+                }
+                .padding()
+            }
+        }
 ```
-
-
