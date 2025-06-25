@@ -16,7 +16,7 @@ To add **GlassmophismUI** to your project:
 ## Usage
 
 ### Rounded Top Bar
-| iPhon 16 Plus | iPad Pro 13-inch |
+| iPhone 16 Plus | iPad Pro 13-inch |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/e1c6de58-2547-493f-9351-ef055a519fee" width="500" alt="BDButtonTrayItemAnimation" /> | <img src='https://github.com/user-attachments/assets/2366e2c0-c9de-4e3c-9e3d-6b475a2d977c' img width = 500> |
 
@@ -33,7 +33,7 @@ RoundedTopBar(){
 
 You can customize the color, gradient, height, and more:
 
-| iPhon 16 Plus | iPad Pro 13-inch |
+| iPhone 16 Plus | iPad Pro 13-inch |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/74f86de1-f8ff-4395-b37c-423e964f8746" width="500" alt="BDButtonTrayItemAnimation" /> | <img src='https://github.com/user-attachments/assets/8106b0f0-89c7-47e1-a6c7-ae4638781b59' img width = 500> |
 
@@ -53,7 +53,7 @@ RoundedTopBar(startColor: .blue,
 
 
 ### Rounded Bottom Bar
-| iPhon 16 Plus | iPad Pro 13-inch |
+| iPhone 16 Plus | iPad Pro 13-inch |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/1c4f365e-0d4c-444e-9153-99eac9e5c9de" width="500" alt="BDButtonTrayItemAnimation"/> | <img src='https://github.com/user-attachments/assets/f859b9ef-68fd-428b-973c-7bc376d85b38' img width = 500> |
 
@@ -72,7 +72,7 @@ ZStack {
 --- 
 You can customize the color, gradient, height, and more:
 
-| iPhon 16 Plus | iPad Pro 13-inch |
+| iPhone 16 Plus | iPad Pro 13-inch |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/1130a811-94eb-4a64-905c-d3831a8ef152" width="500" alt="BDButtonTrayItemAnimation"/> | <img src='https://github.com/user-attachments/assets/95de5efd-996b-46a3-ba5f-c2751114ae9c' img width = 500> |
 
@@ -93,7 +93,7 @@ You can customize the color, gradient, height, and more:
 ---
 
 ### CapsuleButton
-| iPhon 16 Plus | iPad Pro 13-inch |
+| iPhone 16 Plus | iPad Pro 13-inch |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/f77702f1-376e-4aa4-9c3c-59751fe10ed6" width="500"/> | <img src='https://github.com/user-attachments/assets/f4f09f46-69df-42cf-b5be-ff455d356a56' img width = 500> |
 
@@ -141,7 +141,7 @@ Open Info.plist and add a new key called Fonts provided by application (or UIApp
 
 
 ### Glass-style Rounded Rectangle View
-| iPhon 16 Plus | iPad Pro 13-inch |
+| iPhone 16 Plus | iPad Pro 13-inch |
 |-|-|
 | <img src="https://github.com/user-attachments/assets/d621647c-c8b7-48a9-8d73-1d745e06a1e8" width="500"/> | <img src='https://github.com/user-attachments/assets/40ea6f62-a4ca-4151-99a6-331706e86a6c' img width = 500> |
 
