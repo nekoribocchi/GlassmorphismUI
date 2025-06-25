@@ -5,7 +5,6 @@
 //  Created by nekoribocchi on 2025/03/17.
 //
 
-import SwiftUICore
 import SwiftUI
 
 @available(iOS 16.0, *)
