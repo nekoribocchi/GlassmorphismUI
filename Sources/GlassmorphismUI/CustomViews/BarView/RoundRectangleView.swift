@@ -11,12 +11,14 @@ import SwiftUI
 public struct RoundRectangleView<Content: View>: View {
     var heightRatio: CGFloat
     var widthRatio: CGFloat
+    var shadow: Int
     var content: Content
     
     
-    public init(heightRatio: CGFloat = 0.3, widthRatio:CGFloat = 0.8, @ViewBuilder content: () -> Content) {
+    public init(heightRatio: CGFloat = 0.3, widthRatio:CGFloat = 0.8, shadow: Int = 10, @ViewBuilder content: () -> Content) {
         self.heightRatio = heightRatio
         self.widthRatio = widthRatio
+        self.shadow = shadow
         self.content = content()
     }
     
@@ -26,7 +28,7 @@ public struct RoundRectangleView<Content: View>: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 50)
                     .fill(Color.white.opacity(0.7))
-                    .shadow(radius: 30)
+                    .shadow(radius: 10)
                     .frame(width: widthRatio * geometry.size.width, height: geometry.size.height * heightRatio)
                 
                 content
@@ -47,9 +49,7 @@ struct RoundRectangleView_Previews: PreviewProvider {
     @available(iOS 16.0, *)
     static var previews: some View {
         ZStack {
-            LinearGradient(colors: [Color.g_Purple, .g_Orange],
-                           startPoint: .top,
-                           endPoint: .bottom)
+            Color(.white)
             .ignoresSafeArea()
             
             VStack {
