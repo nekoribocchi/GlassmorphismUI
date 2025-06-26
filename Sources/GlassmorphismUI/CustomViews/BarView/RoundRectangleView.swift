@@ -36,7 +36,7 @@ public struct RoundRectangleView<Content: View>: View {
                         height: geometry.size.height * heightRatio
                     )
             }
-            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .bottom)
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }
@@ -55,17 +55,8 @@ struct RoundRectangleView_Previews: PreviewProvider {
             VStack {
                 Spacer()
                 RoundRectangleView(heightRatio: 0.7, widthRatio:0.3) {
-                    List{
-                        Text("1st Item")
-                        Text("2nd Item")
-                        Text("3rd Item")
-                        Text("4th Item")
-                        Text("5th Item")
-                    }
-                    .listRowBackground(Color.clear)
-                    .scrollContentBackground(.hidden)
+                    Text("test")
                 }
-                .padding()
             }
         }
     }
