@@ -28,7 +28,7 @@ public struct RoundRectangleView<Content: View>: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 50)
                     .fill(Color.white.opacity(0.93))
-                    .shadow(radius: shadow)
+                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
                     .frame(width: widthRatio * geometry.size.width, height: geometry.size.height * heightRatio)
                 
                 content
