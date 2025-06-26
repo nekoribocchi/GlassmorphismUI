@@ -10,10 +10,13 @@ import SwiftUI
 @available(iOS 16.0, *)
 public struct RoundRectangleView<Content: View>: View {
     var heightRatio: CGFloat
+    var widthRatio: CGFloat
     var content: Content
     
-    public init(heightRatio: CGFloat = 0.3, @ViewBuilder content: () -> Content) {
+    
+    public init(heightRatio: CGFloat = 0.3, widthRatio:CGFloat = 0.8, @ViewBuilder content: () -> Content) {
         self.heightRatio = heightRatio
+        self.widthRatio = widthRatio
         self.content = content()
     }
     
@@ -24,8 +27,7 @@ public struct RoundRectangleView<Content: View>: View {
                 RoundedRectangle(cornerRadius: 50)
                     .fill(Color.white.opacity(0.7))
                     .shadow(radius: 30)
-                    .frame(height: geometry.size.height * heightRatio)
-                    .padding(.horizontal, 25)
+                    .frame(width: widthRatio * geometry.size.width, height: geometry.size.height * heightRatio)
                 
                 content
                     .padding(30)
@@ -52,7 +54,7 @@ struct RoundRectangleView_Previews: PreviewProvider {
             
             VStack {
                 Spacer()
-                RoundRectangleView(heightRatio: 0.7) {
+                RoundRectangleView(heightRatio: 0.7, widthRatio:0.3) {
                     List{
                         Text("1st Item")
                         Text("2nd Item")
