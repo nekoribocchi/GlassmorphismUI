@@ -15,7 +15,7 @@ public struct RoundRectangleView<Content: View>: View {
     var content: Content
     
     
-    public init(heightRatio: CGFloat = 0.5, widthRatio:CGFloat = 0.8, shadow: CGFloat = 5, @ViewBuilder content: () -> Content) {
+    public init(heightRatio: CGFloat = 0.5, widthRatio:CGFloat = 0.8, shadow: CGFloat = 0.2, @ViewBuilder content: () -> Content) {
         self.heightRatio = heightRatio
         self.widthRatio = widthRatio
         self.shadow = shadow
@@ -28,7 +28,7 @@ public struct RoundRectangleView<Content: View>: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 50)
                     .fill(Color.white.opacity(0.93))
-                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
+                    .shadow(color: Color.black.opacity(shadow), radius: 5, x: 5, y: 5)
                     .frame(width: widthRatio * geometry.size.width, height: geometry.size.height * heightRatio)
                 
                 content
