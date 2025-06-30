@@ -12,6 +12,7 @@ import SwiftUI
 public struct WhiteCircle<Content: View>: View {
     
     let content: Content
+    let backgroundColor : Color?
     let size: CGFloat
     let shadow_opacity: Double
     let opacity: Double
@@ -20,6 +21,7 @@ public struct WhiteCircle<Content: View>: View {
     
     public init(
         size: CGFloat = 90,
+        backgroundColor: Color = .white,
         shadow_opacity: CGFloat = 0.2,
         opacity: Double = 0.93,
         radius: CGFloat = 3,
@@ -27,6 +29,7 @@ public struct WhiteCircle<Content: View>: View {
         @ViewBuilder content: () -> Content
     ) {
         self.content = content()
+        self.backgroundColor = backgroundColor
         self.size = size
         self.shadow_opacity = shadow_opacity
         self.opacity = opacity
@@ -35,12 +38,13 @@ public struct WhiteCircle<Content: View>: View {
     }
     
     public var body: some View {
-        Circle()
-            .fill(Color.white)
-            .opacity(opacity)
-            .frame(width: size, height: size)
-            .shadow(color: Color.black.opacity(shadow_opacity), radius: radius, x: x, y: x)
-            .overlay(content)
+        ZStack{
+            Circle()
+                .fill(backgroundColor ?? .white).opacity(opacity)
+                .frame(width: size, height: size)
+                .shadow(color: Color.black.opacity(shadow_opacity), radius: radius, x: x, y: x)
+                .overlay(content)
+        }
     }
 }
 
