@@ -11,7 +11,7 @@ import SwiftUI
 public struct WhiteCapsule<Content: View>: View {
     let content: Content
     
-    init(@ViewBuilder content: () -> Content) {
+    public init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
     
